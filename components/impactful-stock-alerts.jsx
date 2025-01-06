@@ -8,9 +8,9 @@ import { Button } from "./ui/button";
 export default function ImpactfullStockAlerts() {
   return (
     <PageSection>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-10">
         <div className="space-y-6">
-          <Heading title="Monitor Company Performance" />
+          <Heading title="Get impactful stock alerts" />
 
           <div className="space-y-4">
             <Muted className={"leading-7"}>

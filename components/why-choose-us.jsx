@@ -10,7 +10,7 @@ export default function WhyChooseUs() {
     <PageSection className={"space-y-8"}>
       <Heading
         className={"text-center px-10"}
-        title="Monitor Company Performance"
+        title="Why choose us"
         para="Monitoring key metrics like revenue growth, profit margins, cash flow, KPIs, operational efficiency, market share, and customer satisfaction ensures business health and long-term success."
       />
 

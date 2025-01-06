@@ -159,53 +159,116 @@ export const faqs = [
   },
 ];
 
-export const stocks = [
+export const popularUnlistedShares = [
   {
-    icon: "/icons/amazon.svg",
-    title: "Amazon",
-    price: rupee.format(763),
+    icon: "/stocks/nse.png",
+    title: "NSE India Limited Unlisted Shares",
+    price: 763,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/apple.svg",
-    title: "Apple Inc.",
-    price: rupee.format(826),
+    icon: "/stocks/mse.png",
+    title: "Metropolitan Stock Exchange (MSEI) Unlisted Shares",
+    price: 826,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/dribbble.svg",
-    title: "Dribbble",
-    price: rupee.format(815),
+    icon: "/stocks/oyo.jpeg",
+    title: "ORAVEL STAYS LIMITED (Oyo Unlisted Shares)",
+    price: 815,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/facebook.svg",
-    title: "Facebook",
-    price: rupee.format(432),
+    icon: "/stocks/apollo.jpeg",
+    title: "Apollo Green Energy Limited Unlisted Shares",
+    price: 432,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/github.svg",
-    title: "Github",
-    price: rupee.format(451),
+    icon: "/stocks/sed.png",
+    title: "Spray Engineering Devices Unlisted Shares",
+    price: 451,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/linkedin.svg",
-    title: "Linkedin",
-    price: rupee.format(981),
+    icon: "/stocks/motilal.jpeg",
+    title: "Motilal Oswal Home Finance Limited Unlisted Shares",
+    price: 981,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
+  },
+];
+
+export const newArrivalsShares = [
+  {
+    icon: "/new-arrivals/hinduja.png",
+    title: "Hinduja Leyland Finance Limited ",
+    price: 275,
+    isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/paypal.svg",
-    title: "Paypal",
-    price: rupee.format(341),
+    icon: "/new-arrivals/shree.jpg",
+    title: "Shree Refrigerations Limited ",
+    price: 225,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
   {
-    icon: "/icons/pinterest.svg",
-    title: "Pinterest",
-    price: rupee.format(469),
+    icon: "/new-arrivals/rdc.jpg",
+    title: "RDC Concrete (India) Limited",
+    price: 275,
     isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
+  },
+  {
+    icon: "/new-arrivals/sk-finance.jpg",
+    title: "SK Finance Limited",
+    price: 985,
+    isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
+  },
+  {
+    icon: "/new-arrivals/veeda.png",
+    title: "Veeda Clinical Research Limited",
+    price: 525,
+    isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
+  },
+  {
+    icon: "/new-arrivals/sambhav.png",
+    title: "Sambhv Steel Unlisted Shares",
+    price: 125,
+    isUp: Math.random() > 0.5,
+    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
+      Math.random() * 200
+    )}%) 15D`,
   },
 ];

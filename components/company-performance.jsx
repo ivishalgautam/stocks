@@ -7,7 +7,7 @@ import { Small } from "./typography";
 export default function CompanyPerformance() {
   return (
     <PageSection>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4">
         <div>
           <figure>
             <Image

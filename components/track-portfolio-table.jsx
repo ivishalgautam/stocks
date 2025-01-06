@@ -16,7 +16,7 @@ import {
 import { TrendingDown, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { rupee } from "@/hooks/Intl";
-import { stocks } from "@/data";
+import { popularUnlistedShares, stocks } from "@/data";
 
 export default function TrackPortfolioTable() {
   const isUp = Math.random() > 0.5;
@@ -40,12 +40,14 @@ export default function TrackPortfolioTable() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {stocks.map((item, ind) => (
+                {popularUnlistedShares.map((item, ind) => (
                   <TableRow key={ind}>
                     <TableCell className="font-medium">{item.title}</TableCell>
                     <TableCell className="text-right">
                       <div className={cn("flex flex-col items-end  gap-1")}>
-                        <span className="text-primary-300">{item.price}</span>
+                        <span className="text-primary-300">
+                          {rupee.format(item.price)}
+                        </span>
                         <div
                           className={cn(
                             "flex items-center gap-1 text-xs text-red-500",
@@ -61,7 +63,7 @@ export default function TrackPortfolioTable() {
                               <TrendingDown size={20} />
                             )}
                           </span>
-                          <span>{Math.floor(Math.random() * 50)}%</span>
+                          <span>{item.status}</span>
                         </div>
                       </div>
                     </TableCell>

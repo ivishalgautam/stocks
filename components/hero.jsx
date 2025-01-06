@@ -3,6 +3,7 @@ import Balancer from "react-wrap-balancer";
 import { Muted } from "./typography";
 import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 import TopStocks from "./top-stocks";
+import Heading from "./heading";
 // import { Logos } from "./logo-marquee";
 
 export default function Hero() {
@@ -33,7 +34,8 @@ export default function Hero() {
         </div>
 
         {/*  top stocks */}
-        <div className="px-4">
+        <div className="px-4 container">
+          <Heading title="Popular unlisted zone" />
           <TopStocks />
         </div>
       </div>

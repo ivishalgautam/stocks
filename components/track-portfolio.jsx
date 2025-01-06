@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 export default function TrackPortfolio() {
   return (
     <PageSection>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-10">
         <div>
           <figure>
             <Image src={"/portfolio.svg"} width={500} height={500} alt="" />

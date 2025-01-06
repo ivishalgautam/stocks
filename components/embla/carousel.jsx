@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   NextButton,
@@ -10,7 +11,9 @@ import StockCard from "../cards/stock.jsx";
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ playOnInit: true, delay: 2000 }),
+  ]);
   const [scrollProgress, setScrollProgress] = useState(0);
   const {
     prevBtnDisabled,

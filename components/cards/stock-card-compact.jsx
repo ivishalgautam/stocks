@@ -19,14 +19,14 @@ export default function StockCardCompact({ stock }) {
       <div className="">
         <h2 className="text-sm font-semibold">{stock.title}</h2>
         <div className="flex items-center gap-2 text-xs mb-2 mt-1">
-          <span className="text-primary-300">{stock.price}</span>
+          <span className="text-primary-300">{rupee.format(stock.price)}</span>
           <span
             className={cn("flex items-center gap-1 text-green-500", {
               "text-red-500": !stock.isUp,
             })}
           >
             {stock.isUp ? <TrendingUp size={20} /> : <TrendingDown size={20} />}
-            <span>{Math.floor(Math.random() * 50)}%</span>
+            <span>{stock.status}</span>
           </span>
         </div>
       </div>
