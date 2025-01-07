@@ -29,7 +29,7 @@ export default function ImpactfullStockAlerts() {
           <Button className="px-10 py-6">Sign up</Button>
         </div>
 
-        <div>
+        <div className="">
           <figure>
             <Image src={"/stock-alerts.svg"} width={500} height={500} alt="" />
           </figure>

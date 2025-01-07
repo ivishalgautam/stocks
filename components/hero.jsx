@@ -35,7 +35,7 @@ export default function Hero() {
 
         {/*  top stocks */}
         <div className="px-4 container">
-          <Heading title="Popular unlisted zone" />
+          <Heading title="Popular unlisted shares" />
           <TopStocks />
         </div>
       </div>
