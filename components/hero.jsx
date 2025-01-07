@@ -8,7 +8,7 @@ import Heading from "./heading";
 
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center pt-10">
+    <section className="flex items-center justify-center py-16 pb-0">
       <div className="min-h-screen w-full space-y-16">
         <div>
           <h1 className="text-center font-merriweather text-lg font-semibold sm:text-2xl lg:text-3xl xl:text-5xl">

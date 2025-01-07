@@ -1,36 +1,70 @@
 "use client";
-
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import { faqs } from "@/data";
+import PageSection from "./page-section";
 
-export default function FAQs() {
+function FAQs() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeItem, setActiveItem] = useState(faqs[0]);
+
+  const handleClick = async (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+    const newActiveItem = faqs.find((_, i) => i === index);
+    setActiveItem(newActiveItem);
+  };
+
   return (
-    <section>
-      <div className="grid grid-cols-1 md:grid-cols-5 w-full ">
-        <div className="col-span-2 p-12 bg-neutral-50 dark:bg-neutral-900 z-10">
-          <h2 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 tracking-tight">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-neutral-600 dark:text-neutral-300 mb-8 ">
-            Here are some common questions about platform. If you have any other
-            questions, feel free to reach out to us.
-          </p>
-        </div>
-        <div className="space-y-8 col-span-3 py-12 px-20 bg-white dark:bg-neutral-950 border-t md:border-l md:border-t-0 border-neutral-400/15">
-          {faqs.map((faq, index) => (
-            <div key={faq.question} className="pb-3">
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-medium text-neutral-800 dark:text-neutral-100 tracking-tight">
-                  {faq.question}
-                </h3>
-              </div>
-
-              <p className="text-neutral-700 dark:text-neutral-400 mt-2 leading-6">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
-        </div>
+    <PageSection className="container mx-auto py-20 pt-2">
+      <h1 className="uppercase text-center text-4xl font-bold pt-2 pb-4">
+        Frequently Asked Questions
+      </h1>
+      <div className="h-fit border  rounded-lg p-2 dark:bg-[#111111] bg-[#F2F2F2]">
+        {faqs.map((tab, index) => (
+          <motion.div
+            key={index}
+            className={`overflow-hidden ${
+              index !== faqs.length - 1 ? "border-b" : ""
+            }`}
+            onClick={() => handleClick(index)}
+          >
+            <button
+              className={`p-3 px-2 w-full cursor-pointer sm:text-base text-xs items-center transition-all font-semibold dark:text-white text-black   flex gap-2 
+               `}
+            >
+              <Plus
+                className={`${
+                  activeIndex === index ? "rotate-45" : "rotate-0 "
+                } transition-transform ease-in-out w-5 h-5  dark:text-gray-200 text-gray-600`}
+              />
+              {tab.question}
+            </button>
+            <AnimatePresence mode="sync">
+              {activeIndex === index && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    delay: 0.14,
+                  }}
+                >
+                  <p
+                    className={`dark:text-white text-black p-3 xl:text-base sm:text-sm text-xs pt-0 w-[90%]`}
+                  >
+                    {tab.answer}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </PageSection>
   );
 }
+
+export default FAQs;

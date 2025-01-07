@@ -8,18 +8,22 @@ import TrackPortfolioTable from "./track-portfolio-table";
 import { TestimonialsVariant } from "./testimonials";
 import FAQs from "./faq";
 import NewArrivalsStocks from "./new-arrivals";
+import { TopSectors } from "./top-sectors";
+import EnquirySection from "./enquiry-section";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <NewArrivalsStocks />
+      <TopSectors />
       <WhyChooseUs />
       <CompanyPerformance />
       <ImpactfullStockAlerts />
       <div className="bg-white">
         <TrackPortfolio />
         <TrackPortfolioTable />
+        <EnquirySection />
         <TestimonialsVariant />
         <FAQs />
       </div>

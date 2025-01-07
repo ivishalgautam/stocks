@@ -98,7 +98,7 @@ function MobileNav() {
   );
 }
 
-function CTA() {
+export function CTA() {
   return (
     <div className="flex flex-wrap justify-start gap-2">
       <Button variant="outline">Log in</Button>

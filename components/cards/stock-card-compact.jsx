@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 export default function StockCardCompact({ stock }) {
   return (
     <div className="flex gap-4 bg-white p-4 rounded-2xl border-gray-100 items-center border-2">
-      <figure className="size-10 flex-grow-0">
+      <figure className="size-20 flex-grow-0">
         <Image
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           src={stock.icon}
           alt="stock"
           className="w-full object-cover"

@@ -27,25 +27,31 @@ export default function TrackPortfolioTable() {
         <div className="space-y-6">
           <Heading
             className={"text-center"}
-            title="Track your portfolio"
+            title="Past IPO Performance"
             para="Set up personalized alerts to notify you when significant changes occur in your portfolio. Whether it's a price drop, rise, or market shift, stay on top of your investments and act swiftly to capitalize on opportunities."
           />
 
-          <div className="max-w-lg mx-auto">
+          <div className=" mx-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="">Company</TableHead>
-                  <TableHead className="text-right">Price</TableHead>
+                  <TableHead className="">Name</TableHead>
+                  <TableHead className="">Unlisted share price</TableHead>
+                  <TableHead className="">IPO Price</TableHead>
+                  <TableHead className="">CMP</TableHead>
+                  <TableHead className="text-right">Gain or Loss</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {popularUnlistedShares.map((item, ind) => (
                   <TableRow key={ind}>
                     <TableCell className="font-medium">{item.title}</TableCell>
+                    <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))} - ${rupee.format(Math.floor(Math.random() * 1000))}`}</TableCell>
+                    <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
+                    <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
                     <TableCell className="text-right">
-                      <div className={cn("flex flex-col items-end  gap-1")}>
-                        <span className="text-primary-300">
+                      <div className={cn("flex flex-col items-end gap-1")}>
+                        <span className={cn("text-sm font-semibold bg-red-100 text-red-500 px-2 py-0.5 rounded-full", { "bg-green-100 text-green-500": item.isUp })}>
                           {rupee.format(item.price)}
                         </span>
                         <div
