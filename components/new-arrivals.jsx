@@ -21,7 +21,7 @@ export default function NewArrivalsStocks() {
             ))}
           </div>
           <div className="text-center">
-            <Button>Sign up</Button>
+            <Button>View more</Button>
           </div>
         </div>
       </Container>
