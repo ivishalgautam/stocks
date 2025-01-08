@@ -161,7 +161,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} StockMarket Inc. All rights reserved.
           </p>
-          <p className="mt-4 text-xs text-gray-500">
+          <p className="mt-4 text-xs text-gray-300">
             Disclaimer: The information provided on this website is for general
             informational purposes only and should not be considered as
             investment advice. Investing in stocks carries risks, and past

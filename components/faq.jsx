@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { faqs } from "@/data";
 import PageSection from "./page-section";
+import { Muted } from "./typography";
 
 function FAQs() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,10 +17,15 @@ function FAQs() {
   };
 
   return (
-    <PageSection className="container mx-auto py-20 pt-2">
-      <h1 className="uppercase text-center text-4xl font-bold pt-2 pb-4">
-        Frequently Asked Questions
-      </h1>
+    <PageSection className="container mx-auto py-20 pt-2 space-y-6">
+      <div>
+        <h1 className="uppercase text-center text-4xl font-bold pt-2 pb-4">
+          Frequently Asked Questions
+        </h1>
+        <Muted className={"text-center"}>
+          Your Questions About Unlisted Stocks, Answered
+        </Muted>
+      </div>
       <div className="h-fit border  rounded-lg p-2 dark:bg-[#111111] bg-[#F2F2F2]">
         {faqs.map((tab, index) => (
           <motion.div

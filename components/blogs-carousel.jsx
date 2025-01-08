@@ -48,7 +48,11 @@ export function BlogCarousel({ posts }) {
   return (
     <PageSection className={""}>
       <div className="flex items-center justify-center">
-        <Heading title="Our Blogs" />
+        <Heading
+          title="Our Blogs"
+          para="Exploring the World of Unlisted Stocks"
+          titleClassName="text-center"
+        />
       </div>
       <div className="relative p-10">
         <div className="overflow-hidden" ref={emblaRef}>

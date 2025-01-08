@@ -29,10 +29,11 @@ export const TopStocks = (props) => {
   return (
     <PageSection>
       <Container>
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-end justify-between mb-8">
           <Heading
             title="Popular unlisted shares"
-            className={"flex items-center"}
+            para="Trending Unlisted Shares: Insights & Opportunities"
+            className={""}
           />
 
           <div className="embla__controls">
