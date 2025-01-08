@@ -165,54 +165,66 @@ export const popularUnlistedShares = [
     title: "NSE India Limited Unlisted Shares",
     price: 763,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/stocks/mse.png",
     title: "Metropolitan Stock Exchange (MSEI) Unlisted Shares",
     price: 826,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/stocks/oyo.jpeg",
     title: "ORAVEL STAYS LIMITED (Oyo Unlisted Shares)",
     price: 815,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/stocks/apollo.jpeg",
     title: "Apollo Green Energy Limited Unlisted Shares",
     price: 432,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/stocks/sed.png",
     title: "Spray Engineering Devices Unlisted Shares",
     price: 451,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/stocks/motilal.jpeg",
     title: "Motilal Oswal Home Finance Limited Unlisted Shares",
     price: 981,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
 ];
 
@@ -222,53 +234,126 @@ export const newArrivalsShares = [
     title: "Hinduja Leyland Finance Limited ",
     price: 275,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/new-arrivals/shree.jpg",
     title: "Shree Refrigerations Limited ",
     price: 225,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/new-arrivals/rdc.jpg",
     title: "RDC Concrete (India) Limited",
     price: 275,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/new-arrivals/sk-finance.jpg",
     title: "SK Finance Limited",
     price: 985,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/new-arrivals/veeda.png",
     title: "Veeda Clinical Research Limited",
     price: 525,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
   },
   {
     icon: "/new-arrivals/sambhav.png",
     title: "Sambhv Steel Unlisted Shares",
     price: 125,
     isUp: Math.random() > 0.5,
-    status: `(+${Math.floor(Math.random() * 10)}) (${Math.floor(
-      Math.random() * 200
-    )}%) 15D`,
+    status: function () {
+      return `(${this.isUp ? "+" : "-"}${Math.floor(Math.random() * 10)}) (${Math.floor(
+        Math.random() * 200
+      )}%) 15D`;
+    },
+  },
+];
+
+export const blogPosts = [
+  {
+    id: "1",
+    title: "Understanding Unlisted Shares",
+    excerpt: "Dive into the world of unlisted shares and their potential.",
+    content:
+      "Unlisted shares are securities of companies that are not listed on stock exchanges. These shares can offer unique investment opportunities...",
+    author: "Jane Doe",
+    date: "2023-07-01",
+  },
+  {
+    id: "2",
+    title: "The Risks and Rewards of Investing in Unlisted Shares",
+    excerpt:
+      "Explore the pros and cons of adding unlisted shares to your portfolio.",
+    content:
+      "While unlisted shares can offer high growth potential, they also come with significant risks. In this post, we'll explore...",
+    author: "John Smith",
+    date: "2023-07-15",
+  },
+  {
+    id: "3",
+    title: "How to Evaluate Unlisted Companies",
+    excerpt:
+      "Learn the key factors to consider when assessing unlisted companies.",
+    content:
+      "Evaluating unlisted companies requires a different approach compared to public companies. Here are some key factors to consider...",
+    author: "Emily Brown",
+    date: "2023-08-01",
+  },
+  {
+    id: "4",
+    title: "Unlisted Shares: A Path to Diversification",
+    excerpt:
+      "Discover how unlisted shares can help diversify your investment portfolio.",
+    content:
+      "Diversification is a key strategy in investment. Unlisted shares can provide a unique avenue for diversifying your portfolio...",
+    author: "Michael Johnson",
+    date: "2023-08-15",
+  },
+  {
+    id: "5",
+    title: "The Future of Unlisted Shares in the Digital Age",
+    excerpt: "Explore how technology is shaping the unlisted shares market.",
+    content:
+      "The digital revolution is transforming every aspect of finance, including the unlisted shares market. In this post, we'll look at...",
+    author: "Sarah Lee",
+    date: "2023-09-01",
+  },
+  {
+    id: "6",
+    title: "Unlisted Shares vs. Private Equity: Understanding the Differences",
+    excerpt:
+      "Learn the key distinctions between unlisted shares and private equity investments.",
+    content:
+      "While both unlisted shares and private equity involve investing in private companies, there are important differences to understand...",
+    author: "David Chen",
+    date: "2023-09-15",
   },
 ];

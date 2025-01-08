@@ -6,6 +6,7 @@ import Heading from "./heading";
 import Balancer from "react-wrap-balancer";
 import { Muted } from "./typography";
 import { CTA } from "./navbar";
+import Container from "./container";
 
 export default function EnquirySection() {
   return (
@@ -15,15 +16,12 @@ export default function EnquirySection() {
         para="Fill out the enquiry form to seamlessly buy or sell unlisted shares. Our experts ensure secure, transparent, and hassle-free transactions tailored to your needs!"
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="col-span-2 bg-gray-50 p-8 rounded-2xl">
-          <EnquiryForm />
-        </div>
-        <div className="bg-blue-100 rounded-2xl p-8 space-y-10">
+        <div className="bg-secondary col-span-2 rounded-2xl p-8 space-y-10 flex items-center justify-center flex-col">
           <div className="space-y-2">
             <div className="text-center text-xl font-semibold">
               Attention required
             </div>
-            <Muted className={"text-center"}>
+            <Muted className={"text-center text-white"}>
               <Balancer>
                 Create your account and begin trading with us to get the best
                 experience.
@@ -31,7 +29,7 @@ export default function EnquirySection() {
             </Muted>
           </div>
 
-          <div className="flex items-center justify-center !mb-20">
+          <div className="flex items-center justify-center">
             <CTA />
           </div>
 
@@ -40,6 +38,9 @@ export default function EnquirySection() {
               <Image src={"/enquiry.svg"} width={300} height={300} alt="" />
             </figure>
           </div>
+        </div>
+        <div className="col-span-1 bg-gray-100 p-8 rounded-2xl">
+          <EnquiryForm />
         </div>
       </div>
     </PageSection>

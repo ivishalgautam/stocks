@@ -4,10 +4,11 @@ import React from "react";
 import PageSection from "./page-section";
 import { Muted } from "./typography";
 import Heading from "./heading";
+import Container from "./container";
 
 export default function WhyChooseUs() {
   return (
-    <PageSection className={"space-y-8"}>
+    <PageSection className={"space-y-8 py-20"}>
       <Heading
         className={"text-center px-10"}
         title="Why choose us"

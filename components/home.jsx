@@ -10,21 +10,25 @@ import FAQs from "./faq";
 import NewArrivalsStocks from "./new-arrivals";
 import { TopSectors } from "./top-sectors";
 import EnquirySection from "./enquiry-section";
+import { TopStocks } from "./top-stocks";
+import { BlogCarousel } from "./blogs-carousel";
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <TopStocks />
       <NewArrivalsStocks />
       <TopSectors />
       <WhyChooseUs />
-      <CompanyPerformance />
-      <ImpactfullStockAlerts />
+      {/* <CompanyPerformance /> */}
+      {/* <ImpactfullStockAlerts /> */}
       <div className="bg-white">
-        <TrackPortfolio />
+        {/* <TrackPortfolio /> */}
         <TrackPortfolioTable />
         <EnquirySection />
         <TestimonialsVariant />
+        <BlogCarousel />
         <FAQs />
       </div>
     </div>

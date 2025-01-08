@@ -18,6 +18,7 @@ import {
 import { popularUnlistedShares } from "@/data";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   transactionType: z.enum(["buy", "sell"], {
@@ -50,6 +51,7 @@ export default function EnquiryForm() {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -60,7 +62,7 @@ export default function EnquiryForm() {
       details: "",
     },
   });
-
+  const transactionType = watch("transactionType");
   const onSubmit = (data) => {
     setIsSubmitting(true);
     // Simulate API call
@@ -78,21 +80,35 @@ export default function EnquiryForm() {
           Transaction Type
         </Label>
         <div className="flex space-x-4">
-          <Label className="inline-flex items-center border border-green-300 bg-green-200 rounded-md px-3 py-2 text-sm font-medium text-green-700">
+          <Label
+            className={cn(
+              "inline-flex items-center border border-gray-300 bg-gray-200 rounded-md px-3 py-2 text-sm font-medium text-gray-700",
+              {
+                "bg-green-100 border-green-500": transactionType === "buy",
+              }
+            )}
+          >
             <Input
               type="radio"
               value="buy"
               {...register("transactionType")}
-              className="form-radio h-4 w-4  accent-green-700"
+              className="form-radio h-4 w-4  accent-gray-700"
             />
             <span className="ml-2">Buy</span>
           </Label>
-          <Label className="inline-flex items-center border border-red-300 bg-red-200 rounded-md px-3 py-2 text-sm font-medium text-red-700">
+          <Label
+            className={cn(
+              "inline-flex items-center border border-gray-300 bg-gray-200 rounded-md px-3 py-2 text-sm font-medium text-gray-700",
+              {
+                "bg-green-100 border-green-500": transactionType === "sell",
+              }
+            )}
+          >
             <Input
               type="radio"
               value="sell"
               {...register("transactionType")}
-              className="form-radio h-4 w-4 accent-red-700"
+              className="form-radio h-4 w-4 accent-gray-700"
             />
             <span className="ml-2">Sell</span>
           </Label>
@@ -142,7 +158,6 @@ export default function EnquiryForm() {
           type="number"
           id="quantity"
           {...register("quantity", { valueAsNumber: true })}
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           placeholder="Enter quantity"
         />
         {errors.quantity && (
@@ -161,7 +176,6 @@ export default function EnquiryForm() {
           type="number"
           id="price"
           {...register("price", { valueAsNumber: true })}
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           placeholder="Enter price"
         />
         {errors.price && (
@@ -180,7 +194,6 @@ export default function EnquiryForm() {
           id="details"
           {...register("details")}
           rows={3}
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           placeholder="Enter additional details"
         ></Textarea>
         {errors.details && (
@@ -192,7 +205,8 @@ export default function EnquiryForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+          variant="ghost"
+          className="bg-black text-white w-full hover:bg-black/80 hover:text-white"
         >
           {isSubmitting ? "Submitting..." : "Submit"}
         </Button>

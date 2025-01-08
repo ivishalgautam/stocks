@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ChartNoAxesCombined } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,11 +8,14 @@ export default function Logo({ iconClassName, className, iconSize = 30 }) {
   return (
     <Link href={"/"}>
       <div className="flex items-center gap-2">
-        <ChartNoAxesCombined
-          className={cn("text-primary", iconClassName)}
-          size={iconSize}
-        />
-        <span className={cn("text-2xl font-extrabold", className)}>Logo</span>
+        <figure>
+          <Image
+            src={"/logo.png"}
+            width={100}
+            height={100}
+            alt="Unlisted buzz"
+          />
+        </figure>
       </div>
     </Link>
   );
