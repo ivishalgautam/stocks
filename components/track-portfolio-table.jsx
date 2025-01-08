@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { rupee } from "@/hooks/Intl";
 import { popularUnlistedShares, stocks } from "@/data";
 import Container from "./container";
+import Link from "next/link";
 
 export default function TrackPortfolioTable() {
   const isUp = Math.random() > 0.5;
@@ -46,53 +47,64 @@ export default function TrackPortfolioTable() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {popularUnlistedShares.map((item, ind) => (
-                    <TableRow key={ind}>
-                      <TableCell className="font-medium">
-                        <Image
-                          src={item.icon}
-                          width={100}
-                          height={100}
-                          className="aspect-video object-contain object-center"
-                        />
-                      </TableCell>
-                      <TableCell className="font-medium">
-                        {item.title}
-                      </TableCell>
-                      <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))} - ${rupee.format(Math.floor(Math.random() * 1000))}`}</TableCell>
-                      <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
-                      <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
-                      <TableCell className="text-right">
-                        <div className={cn("flex flex-col items-end gap-1")}>
-                          <span
-                            className={cn(
-                              "text-sm font-semibold bg-red-100 text-red-500 px-2 py-0.5 rounded-full",
-                              { "bg-green-100 text-green-500": item.isUp }
-                            )}
+                  {popularUnlistedShares.map((item, ind) => {
+                    const id = item.title.split(" ").join("-");
+
+                    return (
+                      <TableRow key={ind}>
+                        <TableCell className="font-medium">
+                          <Link href={`/shares/${id}`}>
+                            <Image
+                              src={item.icon}
+                              width={100}
+                              height={100}
+                              className="aspect-video object-contain object-center"
+                            />
+                          </Link>
+                        </TableCell>
+                        <TableCell className="font-medium">
+                          <Link
+                            href={`/shares/${id}`}
+                            className="hover:text-primary transition-colors"
                           >
-                            {rupee.format(item.price)}
-                          </span>
-                          <div
-                            className={cn(
-                              "flex items-center gap-1 text-xs text-red-500",
-                              {
-                                "text-green-500": item.isUp,
-                              }
-                            )}
-                          >
-                            <span>
-                              {item.isUp ? (
-                                <TrendingUp size={20} />
-                              ) : (
-                                <TrendingDown size={20} />
+                            {item.title}
+                          </Link>
+                        </TableCell>
+                        <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))} - ${rupee.format(Math.floor(Math.random() * 1000))}`}</TableCell>
+                        <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
+                        <TableCell className="font-medium">{`${rupee.format(Math.floor(Math.random() * 500))}`}</TableCell>
+                        <TableCell className="text-right">
+                          <div className={cn("flex flex-col items-end gap-1")}>
+                            <span
+                              className={cn(
+                                "text-sm font-semibold bg-red-100 text-red-500 px-2 py-0.5 rounded-full",
+                                { "bg-green-100 text-green-500": item.isUp }
                               )}
+                            >
+                              {rupee.format(item.price)}
                             </span>
-                            <span>{item.status()}</span>
+                            <div
+                              className={cn(
+                                "flex items-center gap-1 text-xs text-red-500",
+                                {
+                                  "text-green-500": item.isUp,
+                                }
+                              )}
+                            >
+                              <span>
+                                {item.isUp ? (
+                                  <TrendingUp size={20} />
+                                ) : (
+                                  <TrendingDown size={20} />
+                                )}
+                              </span>
+                              <span>{item.status()}</span>
+                            </div>
                           </div>
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>
