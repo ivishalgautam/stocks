@@ -9,7 +9,7 @@ import SharesMarquee from "../shares-marquee";
 
 export default function Layout({ children }) {
   return (
-    <ScrollArea className="h-screen bg-gray-50">
+    <div className="h-screen bg-gray-50">
       <Suspense fallback={<div>loading...</div>}>
         <Navbar />
       </Suspense>
@@ -18,6 +18,6 @@ export default function Layout({ children }) {
       <Suspense fallback={<div>loading...</div>}>
         <Footer />
       </Suspense>
-    </ScrollArea>
+    </div>
   );
 }

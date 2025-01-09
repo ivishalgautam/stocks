@@ -15,10 +15,14 @@ import Container from "./container";
 
 export const TopStocks = (props) => {
   const slides = popularUnlistedShares.slice(0, 5);
-  const { options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 3000 }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: false,
+      align: "start",
+      slidesToScroll: 1,
+    },
+    [Autoplay({ playOnInit: true, delay: 3000 })]
+  );
   const {
     prevBtnDisabled,
     nextBtnDisabled,
@@ -54,7 +58,7 @@ export const TopStocks = (props) => {
             <div className="embla__container space-x-4">
               {slides.map((slide, index) => (
                 <div
-                  className="embla__slide border rounded-2xl bg-white"
+                  className="md:flex-[0_0_calc(100%/2)] lg:flex-[0_0_calc(100%/3)] flex-[0_0_calc(100%/1)] border rounded-2xl bg-white"
                   key={index}
                 >
                   <div className="p-4">

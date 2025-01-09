@@ -22,7 +22,7 @@ export default function StockCard({ stock }) {
 
         <div>
           <h2 className="text-sm font-semibold">{stock.title}</h2>
-          <div className="flex items-center gap-2 text-xs mb-2 mt-1">
+          <div className="flex md:block lg:flex items-center gap-2 text-xs mb-2 mt-1">
             <div className="text-primary-300">{rupee.format(stock.price)}</div>
             <div
               className={cn(

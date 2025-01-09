@@ -6,6 +6,7 @@ import Heading from "./heading";
 import { testimonials } from "@/data";
 import PageSection from "./page-section";
 import Container from "./container";
+import { BlogCarousel } from "./blogs-carousel";
 
 export function TestimonialsVariant() {
   const [currentSlide, setCurrentSlide] = useState(0);

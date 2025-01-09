@@ -12,6 +12,8 @@ import {
 } from "./embla/arrow-buttons";
 import { Button } from "./ui/button";
 import Container from "./container";
+import SectorCard from "./cards/sector";
+import Heading from "./heading";
 
 // Mock data for sectors
 const sectorData = [
@@ -49,9 +51,14 @@ const sectorData = [
 
 export function TopSectors() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
-    Autoplay({ playOnInit: true, delay: 3000 }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: false,
+      align: "start",
+      slidesToScroll: 1,
+    },
+    [Autoplay({ playOnInit: true, delay: 3000 })]
+  );
 
   const {
     prevBtnDisabled,
@@ -63,52 +70,34 @@ export function TopSectors() {
   return (
     <PageSection className="py-12 bg-secondary dark:bg-gray-900 rounded-2xl">
       <Container>
-        <div className="px-4 space-y-8 grid lg:grid-cols-12">
-          <div className="flex flex-col items-start justify-center col-span-4 gap-2">
-            <h2 className="text-3xl font-semibold text-start text-white">
-              Top Sectors in Unlisted Shares
-            </h2>
+        <div className="px-4 grid grid-cols-12 gap-4">
+          <div className="flex flex-col items-start justify-center col-span-12 md:col-span-4">
+            <Heading
+              title="Top Sectors in Unlisted Shares"
+              className={"font-semibold text-start text-white"}
+            />
             <Button>View more</Button>
           </div>
 
-          <div className="overflow-hidden col-span-8 space-y-4">
-            <div className="embla" ref={emblaRef}>
-              <div className="embla__container space-x-4">
+          <div className="col-span-12 md:col-span-8">
+            <div className="embla overflow-hidden" ref={emblaRef}>
+              <div className="embla__container space-x-4 p-8">
                 {sectorData.map((sector, index) => (
                   <div
                     key={sector.name}
-                    className={`embla__slide transition-all duration-300 ease-in-out transform bg-white p-6 rounded-2xl flex items-center justify-center ${
+                    className={`flex-[0_0_calc(100%/1)] sm:flex-[0_0_calc(100%/2)] lg:flex-[0_0_calc(100%/3)] transition-all duration-300 ease-in-out transform bg-white p-6 rounded-2xl flex items-center justify-center ${
                       hoveredIndex === index ? "scale-105 shadow-lg" : ""
                     }`}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
-                    <div className="space-y-3 relative">
-                      <div className="flex items-center justify-center">
-                        <figure className="mx-auto size-16">
-                          <Image
-                            src={sector.icon}
-                            width={200}
-                            height={200}
-                            alt={sector.name}
-                          />
-                        </figure>
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <span className="text-center font-semibold">
-                          {sector.name}
-                        </span>
-                      </div>
-                      <div className="text-center font-semibold text-primary text-xl">
-                        {sector.share}
-                      </div>
-                    </div>
+                    <SectorCard sector={sector} />
                   </div>
                 ))}
               </div>
             </div>
             <div className="flex items-center justify-end">
-              <div className="embla__buttons">
+              <div className="flex items-center justify-center gap-2">
                 <PrevButton
                   onClick={onPrevButtonClick}
                   disabled={prevBtnDisabled}

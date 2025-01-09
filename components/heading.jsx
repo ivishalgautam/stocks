@@ -1,6 +1,6 @@
 import React from "react";
 import Balancer from "react-wrap-balancer";
-import { Muted } from "./typography";
+import { H2, H3, Muted } from "./typography";
 import { cn } from "@/lib/utils";
 
 export default function Heading({
@@ -12,9 +12,9 @@ export default function Heading({
 }) {
   return (
     <div className={className}>
-      <h2 className={cn("font-medium text-4xl", titleClassName)}>
+      <H2 className={cn("font-medium", titleClassName)}>
         <Balancer>{title}</Balancer>
-      </h2>
+      </H2>
       <Muted className={cn("mt-4", paraClassName)}>
         <Balancer>{para}</Balancer>
       </Muted>

@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 export const usePrevNextButtons = (emblaApi, onButtonClick) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -11,6 +13,7 @@ export const usePrevNextButtons = (emblaApi, onButtonClick) => {
   }, [emblaApi, onButtonClick]);
 
   const onNextButtonClick = useCallback(() => {
+    console.log("object");
     if (!emblaApi) return;
     emblaApi.scrollNext();
     if (onButtonClick) onButtonClick(emblaApi);
@@ -28,6 +31,12 @@ export const usePrevNextButtons = (emblaApi, onButtonClick) => {
     emblaApi.on("reInit", onSelect).on("select", onSelect);
   }, [emblaApi, onSelect]);
 
+  // useEffect(() => {
+  //   if (!emblaApi) return;
+  //   onSelect();
+  //   emblaApi.on("select", onSelect);
+  // }, [emblaApi, onSelect]);
+
   return {
     prevBtnDisabled,
     nextBtnDisabled,
@@ -37,13 +46,14 @@ export const usePrevNextButtons = (emblaApi, onButtonClick) => {
 };
 
 export const PrevButton = (props) => {
-  const { children, ...restProps } = props;
+  const { children, className, ...restProps } = props;
 
   return (
-    <button
-      className="embla__button embla__button--prev"
+    <Button
+      className={cn("rounded-full embla__button--prev", className)}
       type="button"
       {...restProps}
+      size="icon"
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">
         <path
@@ -52,18 +62,19 @@ export const PrevButton = (props) => {
         />
       </svg>
       {children}
-    </button>
+    </Button>
   );
 };
 
 export const NextButton = (props) => {
-  const { children, ...restProps } = props;
+  const { children, className, ...restProps } = props;
 
   return (
-    <button
-      className="embla__button embla__button--next"
+    <Button
+      className={cn("rounded-full embla__button--next", className)}
       type="button"
       {...restProps}
+      size="icon"
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">
         <path
@@ -72,6 +83,6 @@ export const NextButton = (props) => {
         />
       </svg>
       {children}
-    </button>
+    </Button>
   );
 };
