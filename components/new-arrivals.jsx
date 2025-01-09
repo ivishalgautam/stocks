@@ -11,7 +11,7 @@ export default function NewArrivalsStocks() {
       <Container>
         <Heading
           title="New arrivals"
-          para="Stay ahead in the market with instant stock alerts. Get real-time notifications on price changes, trends, and opportunities to make smarter and faster trading decisions."
+          para="Stay ahead in the market with instant stock alerts. Get real-time notifications on price changes."
         />
 
         <div className="space-y-10">

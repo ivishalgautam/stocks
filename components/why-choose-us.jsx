@@ -1,10 +1,8 @@
 import { whyChooseUs } from "@/data";
-import { SendToBack } from "lucide-react";
 import React from "react";
 import PageSection from "./page-section";
 import { Muted } from "./typography";
 import Heading from "./heading";
-import Container from "./container";
 
 export default function WhyChooseUs() {
   return (
@@ -12,7 +10,7 @@ export default function WhyChooseUs() {
       <Heading
         className={"text-center px-10"}
         title="Why choose us"
-        para="Monitoring key metrics like revenue growth, profit margins, cash flow, KPIs, operational efficiency, market share, and customer satisfaction ensures business health and long-term success."
+        para="Tracking revenue, profit, cash flow, KPIs, efficiency, market share, and satisfaction ensures success."
       />
 
       <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">

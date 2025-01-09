@@ -12,7 +12,7 @@ export default function Heading({
 }) {
   return (
     <div className={className}>
-      <H2 className={cn("font-medium", titleClassName)}>
+      <H2 className={cn("font-bold font-urbanist", titleClassName)}>
         <Balancer>{title}</Balancer>
       </H2>
       <Muted className={cn("mt-4", paraClassName)}>

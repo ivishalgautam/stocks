@@ -13,7 +13,7 @@ export default function EnquirySection() {
     <PageSection className={"space-y-4"}>
       <Heading
         title="Enquiry"
-        para="Fill out the enquiry form to seamlessly buy or sell unlisted shares. Our experts ensure secure, transparent, and hassle-free transactions tailored to your needs!"
+        para="Fill the form to buy or sell unlisted shares securely and hassle-free with expert guidance!"
       />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         <div className="bg-secondary cols-span-12 md:col-span-6 lg:col-span-8 rounded-2xl p-8 space-y-10 flex items-center justify-center flex-col">

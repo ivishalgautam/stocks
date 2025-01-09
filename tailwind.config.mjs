@@ -64,6 +64,7 @@ const config = {
       },
       fontFamily: {
         poppins: "var(--font-poppins)",
+        urbanist: "var(--font-urbanist)",
       },
       animation: {
         marquee: "marquee 25s linear infinite",

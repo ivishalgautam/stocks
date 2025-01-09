@@ -1,7 +1,13 @@
-import { Poppins } from "next/font/google";
+import { Poppins, Urbanist } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout";
 import { Toaster } from "@/components/ui/toaster";
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-urbanist",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${urbanist.className} ${poppins.className} antialiased`}
         suppressHydrationWarning={true}
       >
         <Layout>

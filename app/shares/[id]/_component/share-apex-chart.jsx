@@ -31,7 +31,7 @@ export function ApexShareChart({ data }) {
       enabled: false,
     },
     stroke: {
-      curve: "straight",
+      curve: "smooth",
     },
     title: {
       text: "Share Price Movement",
@@ -54,7 +54,7 @@ export function ApexShareChart({ data }) {
     yaxis: {
       labels: {
         formatter: function (value) {
-          return `$${value.toFixed(2)}`;
+          return rupee.format(value.toFixed(2));
         },
         style: {
           colors: "hsl(var(--muted-foreground))",

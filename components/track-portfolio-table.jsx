@@ -31,7 +31,7 @@ export default function TrackPortfolioTable() {
             <Heading
               className={"text-center"}
               title="Past IPO Performance"
-              para="Set up personalized alerts to notify you when significant changes occur in your portfolio. Whether it's a price drop, rise, or market shift, stay on top of your investments and act swiftly to capitalize on opportunities."
+              para="Set alerts for portfolio changes and stay ahead with timely investment updates."
             />
 
             <div className="bg-gray-100 rounded-xl p-4 mx-auto">

@@ -58,12 +58,10 @@ export const TopStocks = (props) => {
             <div className="embla__container space-x-4">
               {slides.map((slide, index) => (
                 <div
-                  className="md:flex-[0_0_calc(100%/2)] lg:flex-[0_0_calc(100%/3)] flex-[0_0_calc(100%/1)] border rounded-2xl bg-white"
+                  className="md:flex-[0_0_calc(100%/2)] lg:flex-[0_0_calc(100%/3)] flex-[0_0_calc(100%/1)]"
                   key={index}
                 >
-                  <div className="p-4">
-                    <StockCard stock={slide} />
-                  </div>
+                  <StockCard stock={slide} />
                 </div>
               ))}
             </div>

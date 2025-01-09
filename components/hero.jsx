@@ -12,7 +12,7 @@ export default function Hero() {
       <Container>
         <div className="w-full space-y-16">
           <div>
-            <h1 className="text-center font-merriweather text-lg font-semibold sm:text-2xl lg:text-3xl xl:text-5xl">
+            <h1 className="text-center font-urbanist text-lg font-semibold sm:text-2xl lg:text-3xl xl:text-5xl">
               <Balancer>
                 Maximize Returns <br /> with Expert Stock Insights
               </Balancer>

@@ -9,7 +9,7 @@ export default function StockCard({ stock }) {
   const id = stock.title.split(" ").join("-");
   return (
     <Link href={`/shares/${id}`}>
-      <div className="flex gap-4 bg-white justify-start">
+      <div className="flex gap-4 bg-white justify-start items-center  border rounded-2xl p-4 h-full">
         <figure className="size-10 md:size-16">
           <Image
             width={100}
@@ -20,8 +20,8 @@ export default function StockCard({ stock }) {
           />
         </figure>
 
-        <div>
-          <h2 className="text-sm font-semibold">{stock.title}</h2>
+        <div className="flex flex-col justify-center">
+          <h2 className="text-sm font-bold">{stock.title}</h2>
           <div className="flex md:block lg:flex items-center gap-2 text-xs mb-2 mt-1">
             <div className="text-primary-300">{rupee.format(stock.price)}</div>
             <div
