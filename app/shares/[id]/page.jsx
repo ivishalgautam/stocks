@@ -7,8 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { UnlistedShareChart } from "./_component/unlisted-share-chart";
-import { UnlistedShareDetails } from "./_component/unlisted-share-details";
 import { useParams } from "next/navigation";
 import { UnlistedShareFundamentals } from "./_component/unlisted-share-fundamentals";
 import FAQs from "@/components/faq";
@@ -16,6 +14,8 @@ import Image from "next/image";
 import { newArrivalsShares, popularUnlistedShares } from "@/data";
 import { ShareAbout } from "./_component/unlisted-share-about";
 import { BuySell } from "./_component/buy-sell";
+import { H3, H4 } from "@/components/typography";
+import { ApexShareChart } from "./_component/share-apex-chart";
 
 // Mock data for the unlisted share
 const shareData = {
@@ -56,6 +56,32 @@ const shareData = {
       "Healthcare diagnostic AI",
     ],
   },
+  chartData: [
+    { date: "2023-01-01", price: 352 },
+    { date: "2023-02-01", price: 375 },
+    { date: "2023-03-01", price: 368 },
+    { date: "2023-04-01", price: 389 },
+    { date: "2023-05-01", price: 402 },
+    { date: "2023-06-01", price: 415 },
+    { date: "2023-07-01", price: 425 },
+    { date: "2023-08-01", price: 352 },
+    { date: "2023-09-01", price: 625 },
+    { date: "2023-10-01", price: 918 },
+    { date: "2023-11-01", price: 389 },
+    { date: "2023-12-01", price: 642 },
+    { date: "2024-01-01", price: 352 },
+    { date: "2024-02-01", price: 375 },
+    { date: "2024-03-01", price: 368 },
+    { date: "2024-04-01", price: 389 },
+    { date: "2024-05-01", price: 402 },
+    { date: "2024-06-01", price: 415 },
+    { date: "2024-07-01", price: 425 },
+    { date: "2024-08-01", price: 352 },
+    { date: "2024-09-01", price: 625 },
+    { date: "2024-10-01", price: 918 },
+    { date: "2024-11-01", price: 389 },
+    { date: "2024-12-01", price: 642 },
+  ],
 };
 
 export default function UnlistedSharePage() {
@@ -66,7 +92,7 @@ export default function UnlistedSharePage() {
 
   return (
     <div className="container mx-auto p-4 py-10 space-y-10">
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row gap-2 items-center">
         {currShare?.icon && (
           <Image
             src={currShare.icon}
@@ -76,7 +102,7 @@ export default function UnlistedSharePage() {
             alt={name}
           />
         )}
-        <h1 className="text-3xl font-bold">{name}</h1>
+        <H4 className="font-bold text-center md:text-start">{name}</H4>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="md:col-span-2">
@@ -85,7 +111,7 @@ export default function UnlistedSharePage() {
             <CardDescription>Historical price chart</CardDescription>
           </CardHeader>
           <CardContent>
-            <UnlistedShareChart />
+            <ApexShareChart data={shareData.chartData} />
           </CardContent>
         </Card>
 
