@@ -15,7 +15,7 @@ export default function NewArrivalsStocks() {
         />
 
         <div className="space-y-10">
-          <div className="grid  gap-4 mt-8 grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
+          <div className="grid gap-4 mt-8 grid-cols-[repeat(auto-fill,minmax(300px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
             {newArrivalsShares.map((stock, i) => (
               <StockCardCompact key={i} stock={stock} />
             ))}

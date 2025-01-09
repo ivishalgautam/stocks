@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function StockCardCompact({ stock }) {
   return (
-    <Link href={`/shares/${stock.title.split(" ").join("-")}`}>
+    <div>
       <div className="flex gap-4 bg-white p-4 rounded-2xl border-gray-100 items-center border-2">
         <figure className="size-20 flex-grow-0">
           <Image
@@ -39,6 +39,6 @@ export default function StockCardCompact({ stock }) {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

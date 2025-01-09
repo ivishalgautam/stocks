@@ -26,7 +26,7 @@ export function BlogCarousel() {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <PageSection className={""}>
+    <PageSection className={"space-y-4"}>
       <div className="flex items-center justify-center">
         <Heading
           title="Our Blogs"
@@ -34,7 +34,7 @@ export function BlogCarousel() {
           titleClassName="text-center"
         />
       </div>
-      <div className="relative p-10">
+      <div className="relative">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
             {blogPosts.map((post) => (
