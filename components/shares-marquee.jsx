@@ -5,7 +5,7 @@ import React from "react";
 
 export default function SharesMarquee() {
   return (
-    <div className="h-10 flex gap-10 items-center bg-black">
+    <div className="h-10 flex gap-10 items-center bg-black overflow-hidden">
       {Array.from({ length: 5 }).map((item, ind) => (
         <div
           key={ind}
